@@ -4,6 +4,9 @@ A simple extension that helps you find references in the scene.
 Assume you have a GameObject or a Component in a GameObject that you want to know if there any object on the scene that holds the reference to it? Then this extension is for you.
 
 # Then how to use it?
+
+Open the sample scene and follow these steps :
+
 **Step1: select a GameObject you want to find reference in Hierarchy window**
 
 ![tryfindme](https://user-images.githubusercontent.com/9117538/39180333-ce7b7c54-47e0-11e8-9712-6aa35ffea37e.png)
