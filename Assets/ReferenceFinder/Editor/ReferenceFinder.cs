@@ -182,7 +182,8 @@ public class ReferenceFilter : EditorWindow {
                 var parentGameObject = castToComponent.gameObject;
                 return parentGameObject == suspect;
             }
-            //return property.objectReferenceValue == suspect;
+            // none of above types (other classes inherit from Object such as Sprite, Material ..)
+			return property.objectReferenceValue == suspect;
         }
         // default is false
         return false;
