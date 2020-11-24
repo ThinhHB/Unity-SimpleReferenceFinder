@@ -11,7 +11,7 @@ using UnityEditor.Experimental.SceneManagement;
 /// Remember to put it in any Editor foldoer to let it work.
 /// Follow the Readme or decription in Sample scene to know how to use this tool.
 /// </summary>
-public class ReferenceFilter : EditorWindow {
+public class ReferenceFinder : EditorWindow {
 	[MenuItem("CONTEXT/Transform/Who reference this GameObject?")]
 	static void SearchGameObjectReferenceInScene(MenuCommand command) {
 		ClearConsole();
@@ -83,6 +83,10 @@ public class ReferenceFilter : EditorWindow {
 		// expand our rootObjectList
 		for (int n = 0; n < allScene.Count; n++) {
 			var scene = allScene[n];
+			if(!scene.isLoaded) {
+				Debug.Log($"Scene [{scene.name}] exist in Hierarchy but not loaded, ignore search");
+				continue;
+			}
 			var roots = new List<GameObject>();
 			scene.GetRootGameObjects(roots);
 			rootObjectList.AddRange(roots);
